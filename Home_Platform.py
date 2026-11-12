@@ -5,7 +5,7 @@ Author : Mohamed · M3
 
 Multi-Domain Queueing Platform built on M.Sc. thesis engine:
   Manufacturing (Crown) · Bank · Healthcare · Call Center
-  → Airport · Restaurant (future)
+  → Airport · Restaurant . Supermarket . Port / Logistics
 
 Architecture:
   One queueing engine (queue_engine.py) powers ALL domains
@@ -79,11 +79,11 @@ st.markdown("""
 # ── PLATFORM STATS ───────────────────────────────────────────
 c1,c2,c3,c4,c5 = st.columns(5)
 for col, (num, lbl) in zip([c1,c2,c3,c4,c5],[
-    ("4","Active Domains"),
+    ("8","Active Domains"),
     ("1","Core Engine"),
     ("250K+","Records Simulated"),
     ("9","Tabs per Domain"),
-    ("5+","More Coming"),
+    ("8+","More Coming"),
 ]):
     col.markdown(f"""<div class="kpi-strip">
       <div class="kpi-num">{num}</div>
@@ -152,7 +152,7 @@ with col4:
 st.markdown("<br>", unsafe_allow_html=True)
 
 #==============================================================
-# ── FUTURE TEMPLATES ─────────────────────────────────────────
+# ── FUTURE TEMPLATES second step ───────────────────────────
 #=============================================================
 st.markdown("### 🗂 Select a Domain to Analyse")
 col5, col6, col7, col8 = st.columns(4)               
@@ -200,9 +200,7 @@ with col7:
     </div>""", unsafe_allow_html=True)
     st.page_link("pages/Supermarket.py", label="▶ Open Supermarket", use_container_width=True)
    
-
-# ── FUTURE TEMPLATES ─────────────────────────────────────────
-#st.markdown("### 🔜 Coming Soon")         
+      
 with col8:
     st.markdown("""
     <div class="domain-card" style="border-top-color:#e65100;">
@@ -215,7 +213,7 @@ with col8:
       <b>KPIs:</b> SLA % · Ship turnaround time · AHT cost
     </div>""", unsafe_allow_html=True)
     
-    st.page_link("pages/Port_Logistics.py", label="▶ Open Port_Logistics", use_container_width=True) #🔜 Coming Soon
+    st.page_link("pages/Port_Logistics.py", label="▶ Open Port_Logistics", use_container_width=True)
        
 st.markdown("<br>", unsafe_allow_html=True)
     
@@ -238,7 +236,10 @@ from queue_engine import MMS
 MMS(λ=30, μ=12, S=3)   # Bank
 MMS(λ=12, μ=4,  S=4)   # Healthcare
 MMS(λ=50, μ=20, S=3)   # Call Center
-MMS(λ=200,μ=60, S=4)   # Airport (soon)
+MMS(λ=200,μ=60, S=4)   # Airport
+MMS(λ=25,μ=12, S=20)   # Restaurant
+MMS(λ=80,μ=60, S=6)    # Supermarket
+MMS(λ=8, μ=3.2, S=3)    # Port_Logistics
 
 # Returns: {ρ, Lq, Wq, Ws, Ls, P0}
       </pre>
