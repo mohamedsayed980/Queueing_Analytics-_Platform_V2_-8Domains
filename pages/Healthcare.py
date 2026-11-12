@@ -109,18 +109,7 @@ with st.sidebar:
 
 
 # ── LOAD DATA ─────────────────────────────────────────────────
-"""
-data_loader.py - one shared CSV finder/loader for every page of the platform.
-Put it in the repo ROOT (next to Home.py and queue_engine.py).
 
-Usage in a page (after the sidebar uploader `_up` exists):
-
-    import data_loader
-    df = data_loader.load_domain_data("healthcare", _up)
-    if df is None or df.empty:
-        data_loader.explain_missing("healthcare")
-        st.stop()
-"""
 import io
 import re
 import pathlib
