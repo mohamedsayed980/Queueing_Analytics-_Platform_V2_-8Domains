@@ -169,7 +169,7 @@ with col5:
       
       <b>KPIs:</b> Wait time · Checkpoint cost · Savings
     </div>""", unsafe_allow_html=True)
-    st.page_link("pages/Airport.py", label="▶ Open Airport Security", use_container_width=True)
+    st.page_link("pages/Airport.py", label="▶ Open Airport", use_container_width=True)
       
 with col6:
     st.markdown("""
