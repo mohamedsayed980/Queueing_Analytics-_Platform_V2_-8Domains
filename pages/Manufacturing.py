@@ -29,7 +29,25 @@ from queue_engine import run_model, MODEL_CATALOG
 
 # ─────────────────────────────────────────────────────────────────────────────
 # PAGE CONFIG
-# ────────────────────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+st.set_page_config(
+    page_title="Job Shop Capacity Planner",
+    page_icon="🏭", layout="wide",
+)
+
+# ── HEADER ────────────────────────────────────────────────────
+st.markdown(f"""
+<div style='background:linear-gradient(135deg,#1a237e,#1565c0);
+     padding:36px 40px;border-radius:14px;margin-bottom:24px;'>
+  <h1 style='color:#fff;margin:0 0 8px 0;font-size:2.2rem;font-weight:800;'>
+    🏭 Job Shop Capacity Planner </h1>
+  <p style='color:#b3d4ff;margin:0;font-size:1rem;'>
+  Interactive Decision-Support Dashboard
+    Author : Mohamed · M3 -
+    M.Sc. Thesis 1999 → Modernized 2026</p>
+    
+</div>""", unsafe_allow_html=True)
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # EMBEDDED ANALYTICS
